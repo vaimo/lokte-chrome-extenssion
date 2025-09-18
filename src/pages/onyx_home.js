@@ -65,6 +65,7 @@ import { getOnyxDomain } from "../utils/storage.js";
           }
           else {
             console.log('long loading')
+            showErrorModal(mainIframe.src);
           }
         } catch (error) {
           showErrorModal(mainIframe.src);
