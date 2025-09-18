@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Lokte Extension",
+  "version": "1.0",
+  "description": "Lokte integration for Chrome",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "cookies"
+  ],
+  "host_permissions": ["https://lokte.vaimo.network/*"],
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_icon": {
+      "16": "public/vaimo.png",
+      "48": "public/vaimo.png",
+      "128": "public/vaimo.png"
+    }
+  },
+  "icons": {
+    "16": "public/vaimo.png",
+    "48": "public/vaimo.png",
+    "128": "public/vaimo.png"
+  },
+  "options_page": "src/pages/options.html",
+  "chrome_url_overrides": {
+    "newtab": "src/pages/onyx_home.html"
+  },
+  "commands": {
+    "toggle-new-tab-override": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+O",
+        "mac": "Command+Shift+O"
+      },
+      "description": "Toggle Lokte New Tab Override"
+    }
+  },
+  "side_panel": {
+    "default_path": "src/pages/panel.html"
+  }
+}
